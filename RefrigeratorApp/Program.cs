@@ -73,8 +73,8 @@ namespace RefrigeratorApp
                         Console.WriteLine("Enter the product quantity:");
                         double quantity = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Enter the expiry date (optional, else default days for product will be added.):");
-                        DateTime.TryParse(Console.ReadLine(), out DateTime expiryDate);
+                        Console.WriteLine("Enter the expiry date \"dd/MM/yyyy\" (optional, else default days for product will be added.):");
+                        DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime expiryDate);
 
                         if (expiryDate == DateTime.MinValue)
                         {
